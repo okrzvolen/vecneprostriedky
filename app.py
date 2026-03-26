@@ -26,7 +26,9 @@ def fix_broken_text(text):
         curr, prev = words[i], result[-1]
         is_category = bool(re.match(r'^[A-Z][0-9]$|^[0-9]$|^[GNO]$', curr))
         is_suffix = curr.lower() in ["nské", "ov", "ová", "ého", "om", "ých"] or curr[0].islower()
-        if (len(curr) <= 4 && !is_category && is_suffix) or (len(curr) <= 2 && !is_category):
+        
+        # OPRAVENÉ: Použité 'and' a 'not' namiesto '&&' a '!'
+        if (len(curr) <= 4 and not is_category and is_suffix) or (len(curr) <= 2 and not is_category):
             result[-1] = result[-1] + curr
         else:
             result.append(curr)
