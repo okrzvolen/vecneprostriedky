@@ -1,8 +1,9 @@
+import io  # io musí byť samostatne, je to vstavaná knižnica Pythonu
 import os
 import pandas as pd
 import pdfplumber
-from flask import Flask, render_template, request, send_file, io
 import re
+from flask import Flask, render_template, request, send_file
 
 app = Flask(__name__)
 
